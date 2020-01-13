@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 2- sesion 29</title>
+    <link rel="stylesheet" href="HojaEstilos1.css">
+    <script>
+        function dibujarLinea() {
+            var canvasvar1 = document.getElementById("canvas1");
+            var contexto1 = canvasvar1.getContext("2d");
+            contexto1.moveTo(0,0);
+            contexto1.lineTo(300, 200);/*Eje x eje y*/
+            contexto1.lineTo(600, 0);/*Eje x eje y*/
+            contexto1.stroke();
+        }
+        function dibujarTexto() {
+            var canvasvar1 = document.getElementById("canvas1");
+            var contexto1 = canvasvar1.getContext("2d");
+            contexto1.font = "30px Arial";
+            contexto1.fillText("Hola a la clase", 100, 150);/*x, y*/
+        }
+        function dibujarCirculo() {
+            var canvasvar1 = document.getElementById("canvas1"); 
+            var contexto1 = canvasvar1.getContext("2d"); 
+            contexto1.beginPath(); contexto1.arc(100, 150, 60, 0, 2 * Math.PI);
+            /*Eje x, eje y, radio, inicio de la circunferencia (0) y
+             final de la circunferencia(2*PI) (2*Math.PI*R es la longitud
+              completa de la circunferencia*/ 
+              contexto1.stroke();
+        }
+        function dibujarEnCanvas() { 
+            var canvasvar1 = document.getElementById("canvas1"); 
+            var contexto1 = canvasvar1.getContext("2d"); 
+            var imagen1 = document.getElementById("salva1"); 
+            contexto1.drawImage(imagen1,5,5); }
+    </script>
+</head>
+
+<body>
+    <h2>Canvas</h2>
+    <canvas id="canvas1" class="clasecanvas1" width= "600";
+    height="400";>
+        <!-- Canvas es un elemento en línea -->
+    </canvas>
+    <img id="salva1" src="img/salva1.jpg" alt="Salva" title="Salva">
+    <br>
+    <button onclick="dibujarLinea()">Dibujar Linea</button>
+    <button onclick="dibujarTexto()">Dibujar Texto</button>
+    <button onclick="dibujarCirculo()">Dibujar Circulo</button>
+    <button onclick="dibujarEnCanvas()">Dibujar Imagen</button>
+</body>
+
+</html>
