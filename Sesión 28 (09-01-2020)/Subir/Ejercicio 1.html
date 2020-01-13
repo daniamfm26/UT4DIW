@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 1-ramasesion28</title>
+    <link rel="stylesheet" href="HojaEstilo1.css">
+</head>
+
+<body>
+    <h1>Ejercicio 1-Elementos multimedia</h1>
+
+    <h2>Figure y figcaption</h2>
+    <figure>
+        <img class="imagen1" src="img/comida1.jpg" alt="Comida muy buena" title="Comida muy buena">
+        <figcaption>Comida</figcaption>
+    </figure>
+    <h2>Picture</h2>
+    <picture>
+        <source media="(min-width: 650px)" srcset="img/comida2.jpg" class="imagen1">
+        <source media="(min-width: 465px)" srcset="img/comida2-1.jpg" class="imagen1">
+        <img src="img/comida2-2.jpg" alt="Imagen retrocompatible" style="width:auto;">
+        <!-- en caso de no cumplirse ninguna de las anteriores condiciones, se aplica la tercera -->
+    </picture>
+
+    <h2>Audio</h2>
+    <audio id="audio1" controls>
+        <source src="audio/David Bisbal - En Tus Planes.mp3" type="audio/mpeg">
+        <source src="audio/David Bisbal - En Tus Planes.ogg" type="audio/ogg">
+        <source src="audio/David Bisbal - En Tus Planes.wav" type="audio/wav">
+    </audio>
+
+    <h3>API de HTML5 dedicada a audio</h3>
+    <div> <button onclick="document.getElementById('audio1').play()">Reproducir el Audio</button> <button
+            onclick="document.getElementById('audio1').pause()">Pausar el Audio</button> <button
+            onclick="document.getElementById('audio1').volume+=0.1">Aumentar el Volumen</button> <button
+            onclick="document.getElementById('audio1').volume-=0.1">Disminuir el Volumen</button> 
+    </div>
+
+    <h2>Video</h2>
+
+</body>
+
+</html>
