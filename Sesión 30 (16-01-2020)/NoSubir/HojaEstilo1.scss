@@ -38,27 +38,14 @@
 }
 
 
-%contenedor{
-    grid-template-columns: auto auto auto;
-  background-color: #2196f3;
-  padding: 10px;
-  column-gap: 30px;/*Espacio entre columnas*/
-  row-gap: 40px;/*Espacio entre filas*/
-}
-%contenedorhijo{
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid black;
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-}
+
 .contenedorgridtemprows{
     display: grid;/*Se muestra como bloque*/
     @extend %contenedor;
     // grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-columns: repeat(5,20%);
     gap: 0; /*Propiedad resumen de column-gap y row-gap*/
-    box-sizing: border-box;
+   
     grid-template-rows: 200px 300px 200px;
     &__elementogrid {
       @extend %contenedorhijo
@@ -71,9 +58,55 @@
     // grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-columns: repeat(5,20%);
     gap: 0; /*Propiedad resumen de column-gap y row-gap*/
-    box-sizing: border-box;
+   
     &__elementogrid {
       @extend %contenedorhijo
     }
 
+}
+
+
+%contenedor{
+    grid-template-columns: auto auto auto;
+  background-color: #2196f3;
+  padding: 10px;
+  column-gap: 30px;/*Espacio entre columnas*/
+  row-gap: 40px;/*Espacio entre filas*/
+  box-sizing: border-box;
+}
+%contenedorhijo{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+@mixin  justifycontent($valor) {
+    justify-content: $valor;
+}
+
+@mixin aligncontent($value) {
+    align-content: $value;
+}
+
+.contenedorgridaligncontent {
+    display: grid;
+    @extend %contenedor;
+    @include justifycontent(center);
+    @include aligncontent(space-around);
+    margin-top: 30px;
+    min-height: 600px;
+    &__elementogrid {
+      @extend %contenedorhijo;
+    }
+}
+
+
+.contenedorgridjustifycontent {
+    display: grid;
+    @extend %contenedor;
+    @include justifycontent(stretch);
+    &__elementogrid {
+      @extend %contenedorhijo;
+    }
 }
