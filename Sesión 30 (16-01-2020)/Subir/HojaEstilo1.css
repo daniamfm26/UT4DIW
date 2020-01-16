@@ -1,0 +1,68 @@
+.contenedorgrid {
+  display: grid;
+  /*Se muestra como bloque*/
+  grid-template-columns: auto auto auto;
+  background-color: #2196f3;
+  padding: 10px;
+}
+.contenedorgrid__elementogrid {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.contenedorgridlinea {
+  display: inline-grid;
+  /*Se muestra como linea*/
+}
+.contenedorgridlinea__elementogrid7 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.contenedorgridlinea__elementogrid2 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  /*para centrarlo en fila y columna necesito las 2 propiedades*/
+}
+
+.contenedorgridtempcolumns, .contenedorgridtemprows, .contenedorgridlinea {
+  grid-template-columns: auto auto auto;
+  background-color: #2196f3;
+  padding: 10px;
+  column-gap: 30px;
+  /*Espacio entre columnas*/
+  row-gap: 40px;
+  /*Espacio entre filas*/
+}
+
+.contenedorgridtempcolumns__elementogrid, .contenedorgridtemprows__elementogrid, .contenedorgridlinea__elementogrid, .contenedorgridlinea__elementogrid7, .contenedorgridlinea__elementogrid2 {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.contenedorgridtemprows {
+  display: grid;
+  /*Se muestra como bloque*/
+  grid-template-columns: repeat(5, 20%);
+  gap: 0;
+  /*Propiedad resumen de column-gap y row-gap*/
+  box-sizing: border-box;
+  grid-template-rows: 200px 300px 200px;
+}
+.contenedorgridtempcolumns {
+  display: grid;
+  /*Se muestra como bloque*/
+  grid-template-columns: repeat(5, 20%);
+  gap: 0;
+  /*Propiedad resumen de column-gap y row-gap*/
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=HojaEstilo1.css.map */

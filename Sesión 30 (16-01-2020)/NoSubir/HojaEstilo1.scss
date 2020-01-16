@@ -1,0 +1,79 @@
+.contenedorgrid {
+  display: grid;/*Se muestra como bloque*/
+  grid-template-columns: auto auto auto;
+  background-color: #2196f3;
+  padding: 10px;
+  &__elementogrid {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+
+
+
+.contenedorgridlinea {
+  display: inline-grid;/*Se muestra como linea*/
+  @extend %contenedor;
+  &__elementogrid {
+    @extend %contenedorhijo
+  }
+  &__elementogrid7{
+      grid-column-start: 2;
+      grid-column-end: 3;
+      @extend %contenedorhijo
+  }
+  &__elementogrid2{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    /*para centrarlo en fila y columna necesito las 2 propiedades*/
+    @extend %contenedorhijo
+}
+  
+}
+
+
+%contenedor{
+    grid-template-columns: auto auto auto;
+  background-color: #2196f3;
+  padding: 10px;
+  column-gap: 30px;/*Espacio entre columnas*/
+  row-gap: 40px;/*Espacio entre filas*/
+}
+%contenedorhijo{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+.contenedorgridtemprows{
+    display: grid;/*Se muestra como bloque*/
+    @extend %contenedor;
+    // grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: repeat(5,20%);
+    gap: 0; /*Propiedad resumen de column-gap y row-gap*/
+    box-sizing: border-box;
+    grid-template-rows: 200px 300px 200px;
+    &__elementogrid {
+      @extend %contenedorhijo
+    }
+
+}
+.contenedorgridtempcolumns{
+    display: grid;/*Se muestra como bloque*/
+    @extend %contenedor;
+    // grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: repeat(5,20%);
+    gap: 0; /*Propiedad resumen de column-gap y row-gap*/
+    box-sizing: border-box;
+    &__elementogrid {
+      @extend %contenedorhijo
+    }
+
+}
