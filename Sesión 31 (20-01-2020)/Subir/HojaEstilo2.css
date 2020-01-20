@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+body .imagenresponsivamaxwidth {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+body .contenedorimagen {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  width: 70%;
+  min-height: 500px;
+  background-image: url("img/comida4.jpg");
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  background-size: contain;
+  text-align: center;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  background-color: lightblue;
+}
+.contenedor__elementohijo__imagenresponsiva {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=hojaestilo2.css.map */
